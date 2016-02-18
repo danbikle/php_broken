@@ -1,0 +1,5 @@
+[Thu Feb 18 00:01:19.651286 2016] [mpm_event:notice] [pid 2977:tid 140025710077760] AH00489: Apache/2.4.18 (Unix) configured -- resuming normal operations
+[Thu Feb 18 00:01:19.651393 2016] [core:notice] [pid 2977:tid 140025710077760] AH00094: Command line: '/home/dan/apache/bin/httpd'
+[Thu Feb 18 00:32:27.534417 2016] [mpm_event:notice] [pid 2977:tid 140025710077760] AH00491: caught SIGTERM, shutting down
+[Thu Feb 18 01:19:31.485908 2016] [mpm_event:notice] [pid 2743:tid 139639710771008] AH00489: Apache/2.4.18 (Unix) PHP/7.0.3 configured -- resuming normal operations
+[Thu Feb 18 01:19:31.504884 2016] [core:notice] [pid 2743:tid 139639710771008] AH00094: Command line: '/home/dan/apache/bin/httpd'
