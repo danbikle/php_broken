@@ -95,5 +95,38 @@ Question:
 How to debug my tech-combo so Apache evaluates the php-syntax in my php file instead of serving it as plain HTML?
 
 
+I fixed it:
 
 
+    dan@nia111:~/apache $ 
+    dan@nia111:~/apache $ bin/apachectl stop
+    AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+    dan@nia111:~/apache $ 
+    
+    vi ~/conf/httpd.conf
+    
+    dan@nia111:~/apache $ tail -4 conf/httpd.conf
+    
+    <FilesMatch \.php$>
+        SetHandler application/x-httpd-php
+    </FilesMatch>
+    dan@nia111:~/apache $ 
+    dan@nia111:~/apache $ bin/apachectl start
+    AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+    dan@nia111:~/apache $ 
+    dan@nia111:~/apache $ 
+    dan@nia111:~/apache $ curl 0.0.0.0:3080/php10.php
+    <html>
+     <head>
+      <title>PHP Test</title>
+     </head>
+     <body>
+     <p>Hello World</p> 
+     </body>
+    </html>
+    dan@nia111:~/apache $ 
+    dan@nia111:~/apache $ 
+    dan@nia111:~/apache $ echo yay!
+    yay!
+    dan@nia111:~/apache $ 
+    dan@nia111:~/apache $ 
